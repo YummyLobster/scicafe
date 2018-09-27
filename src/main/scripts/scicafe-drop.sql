@@ -1,0 +1,11 @@
+drop table users;
+drop table roles;
+drop table authorities;
+drop table organizations;
+drop table events;
+drop table events_poster;
+drop table events_attendance;
+drop table program;
+drop table reward;
+drop table tags;
+drop table use_tags;

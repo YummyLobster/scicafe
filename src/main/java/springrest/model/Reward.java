@@ -18,8 +18,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 @Entity
-@Table(name = "events")
-public class Event implements Serializable {
+@Table(name = "reward")
+public class Reward implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -34,7 +34,7 @@ public class Event implements Serializable {
     private String description;
     
     @Column(nullable = false)
-    private String location;
+    private String provider;
     
     @Column(nullable = false)
     private Date start_date;
@@ -44,18 +44,16 @@ public class Event implements Serializable {
   
     @Column(nullable = true)
     private String status;
+    
+    @Column(nullable = true)
+    private String qualified_events;
+    
+    @Column(nullable = true)
+    private String reward_criteria;
 
     
-    @OneToMany
-    @JoinTable(name = "events_attendance",
-        joinColumns = @JoinColumn(name = "user_id"),
-        inverseJoinColumns = @JoinColumn(name = "events_id"))
-    Set<User> events_attendance;
-    
-    
-    public Event()
+    public Reward()
     {
-    	events_attendance = new HashSet<User>();
     }
 
 
@@ -89,13 +87,13 @@ public class Event implements Serializable {
 	}
 
 
-	public String getLocation() {
-		return location;
+	public String getProvider() {
+		return provider;
 	}
 
 
-	public void setLocation(String location) {
-		this.location = location;
+	public void setProvider(String provider) {
+		this.provider = provider;
 	}
 
 
@@ -129,13 +127,23 @@ public class Event implements Serializable {
 	}
 
 
-	public Set<User> getUser() {
-		return events_attendance;
+	public String getQualified_events() {
+		return qualified_events;
 	}
 
 
-	public void setUser(Set<User> user) {
-		this.events_attendance = user;
+	public void setQualified_events(String qualified_events) {
+		this.qualified_events = qualified_events;
+	}
+
+
+	public String getReward_criteria() {
+		return reward_criteria;
+	}
+
+
+	public void setReward_criteria(String reward_criteria) {
+		this.reward_criteria = reward_criteria;
 	}
 
 
