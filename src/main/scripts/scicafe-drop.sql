@@ -4,7 +4,6 @@ drop table events;
 drop table events_attendance;
 drop table eventsToReward;
 drop table hibernate_sequence;
-drop table organizations;
 drop table program;
 drop table reward;
 drop table roles;

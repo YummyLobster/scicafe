@@ -37,11 +37,6 @@ create table attender_events (
        next_val bigint
    ) engine=InnoDB;
 
-    create table organizations (
-       organization_id bigint not null,
-        name varchar(255) not null,
-        primary key (organization_id)
-    ) engine=InnoDB;
 
     create table program (
        program_id bigint not null,
@@ -75,10 +70,10 @@ create table attender_events (
     ) engine=InnoDB;
 
     create table use_tags (
-       reward_id bigint null,
+       reward_id bigint not null,
         tag_id bigint not null,
-        events_id bigint null,
-        primary key (tag_id)
+        events_id bigint not null,
+        primary key (events_id, tag_id)
     ) engine=InnoDB;
 
     create table user_programs (
@@ -93,7 +88,7 @@ create table attender_events (
         enabled bit not null default true,
         firstName varchar(255) not null,
         lastName varchar(255) not null,
-        organization bigint not null,
+        organization varchar(255) not null,
         password varchar(255) not null,
         position varchar(255) not null,
         title varchar(255),

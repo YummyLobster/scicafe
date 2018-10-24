@@ -14,7 +14,7 @@ import springrest.model.dao.UserDao;
 @Repository
 public class UserDaoImpl implements UserDao {
 
-    @PersistenceContext
+	@PersistenceContext
     private EntityManager entityManager;
 
     @Override

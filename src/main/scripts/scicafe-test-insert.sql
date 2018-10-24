@@ -6,16 +6,12 @@ insert into roles values (3, 'REWARDORG');
 insert into roles values (4, 'USER');
 
 
-insert into users (id, username, password, firstName, lastName, email, position,organization) values (1, 'admin', '1234', 'Daniel', 'Chang', 'dchang@cal.edu' ,'student',4);
-insert into users (id, username, password, firstName, lastName, email, position,organization) values (2, 'lobster', 'yummy', 'David', 'Chang', 'dchang@cal.edu' ,'student',4);
+insert into users (id, username, password, firstName, lastName, email, position,organization) values (1, 'admin', '1234', 'Daniel', 'Chang', 'dchang@cal.edu' ,'student',"csula");
+insert into users (id, username, password, firstName, lastName, email, position,organization) values (2, 'lobster', 'yummy', 'David', 'Chang', 'dchang@cal.edu' ,'student',"computer science");
 
 insert into authorities (user_id, role_id) value (1, 2);
 insert into authorities (user_id, role_id) value (1, 1);
 
-insert into organizations(organization_id,name) value(1,"CSULA");
-insert into organizations(organization_id,name) value(2,"ECST");
-insert into organizations(organization_id,name) value(3,"Computer Science");
-insert into organizations(organization_id,name) value(4,"undeclared");
 
 
 insert into events (id, title, description, location, start_date, end_date, status)

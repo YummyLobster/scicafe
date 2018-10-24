@@ -15,8 +15,10 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
+
 
 @Entity
 @Table(name = "users")
@@ -45,7 +47,7 @@ public class User implements Serializable {
     Set<Role> roles;
     
     @Column(nullable = false)
-    private Long organization;
+    private String organization;
     
     @Column(nullable = false)
     private String firstName;
@@ -131,15 +133,6 @@ public class User implements Serializable {
         this.roles = roles;
     }
 
-	
-
-	public Long getOrganization() {
-		return organization;
-	}
-
-	public void setOrganization(Long organization) {
-		this.organization = organization;
-	}
 
 	public String getFirstName() {
 		return firstName;
@@ -195,6 +188,14 @@ public class User implements Serializable {
 
 	public void setEventAttended(Set<Event> eventAttended) {
 		this.eventAttended = eventAttended;
+	}
+
+	public String getOrganization() {
+		return organization;
+	}
+
+	public void setOrganization(String organization) {
+		this.organization = organization;
 	}
 
 	
