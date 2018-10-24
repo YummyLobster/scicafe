@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -52,11 +53,26 @@ public class Event implements Serializable {
         inverseJoinColumns = @JoinColumn(name = "events_id"))
     Set<User> events_attendance;
     
+    @ManyToMany
+    @JoinTable(name = "use_tags",
+        joinColumns = @JoinColumn(name = "events_id"),
+        inverseJoinColumns = @JoinColumn(name = "tag_id"))
+    Set<Tags> tags;
+    
     
     public Event()
     {
     	events_attendance = new HashSet<User>();
+    	tags = new HashSet<Tags>();
     }
+    public Event(Long id, String title, String description, String location, Date start_date, Date end_date) {
+		this.id = id;
+		this.title = title;
+		this.description = description;
+		this.location = location;
+		this.start_date = start_date;
+		this.end_date = end_date;
+	}
 
 
 	public Long getId() {
@@ -128,14 +144,22 @@ public class Event implements Serializable {
 		this.status = status;
 	}
 
-
-	public Set<User> getUser() {
+	public Set<User> getEvents_attendance() {
 		return events_attendance;
 	}
 
+	public void setEvents_attendance(Set<User> events_attendance) {
+		this.events_attendance = events_attendance;
+	}
 
-	public void setUser(Set<User> user) {
-		this.events_attendance = user;
+
+	public Set<Tags> getTags() {
+		return tags;
+	}
+
+
+	public void setTags(Set<Tags> tags) {
+		this.tags = tags;
 	}
 
 

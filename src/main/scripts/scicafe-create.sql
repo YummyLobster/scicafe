@@ -1,74 +1,102 @@
-create table users (
-    id          bigint primary key,
-    username    varchar(255) not null unique,
-    password    varchar(255) not null,
-    enabled     boolean not null default true,
-    firstName   varchar(255) not null,
-    lastName    varchar(255) not null,
-    email       varchar(255) not null,
-    postion     varchar(255) not null,
-    title       varchar(255),
-    organization bigint not null,
-    programAffiliations    varchar(255)
+create table attender_events (
+       user_id bigint not null,
+        event_id bigint not null,
+        primary key (user_id, event_id)
+    ) engine=InnoDB;
 
-);
-create table roles (
-    id      bigint primary key,
-    name    varchar(255) not null unique
-);
-create table authorities (
-    user_id bigint not null references users(id),
-    role_id bigint not null references roles(id),
-  primary key (user_id, role_id)
-);
-create table organizations(
- id     bigint primary key,
- name   varchar(255) not null unique,
- above  bigint
-);
-create table events (
-    id          bigint primary key,
-    title    varchar(255) not null,
-    description    varchar(255) not null,
-    location     varchar(255) not null,
-    start_date   DATETIME,
-    end_date    DATETIME,
-    status     varchar(255) not null
-);
-create table events_poster (
-    user_id bigint not null references users(id),
-    events_id bigint not null references roles(id),
-  primary key (user_id, events_id)
-);
-create table events_attendance (
-    user_id bigint not null references users(id),
-    events_id bigint not null references roles(id),
-  primary key (user_id, events_id)
-);
-create table program (
-    id      bigint primary key,
-    name    varchar(255) not null unique,
-    fullname    varchar(255) not null unique,
-    description    varchar(255) not null
-);
-create table reward(
-    id      bigint primary key,
-    title    varchar(255) not null,
-    description    varchar(255) not null,
-    provider varchar(255) not null,
-    status varchar(255) not null,
-    start_date   DATETIME,
-    end_date    DATETIME,
-    qualified_events  varchar(255) not null,
-    reward_criteria varchar(255) not null
-);
-create table tags(
-    id      bigint primary key,
-    name    varchar(255) not null unique
-);
-create table use_tags (
-    tag_id bigint references tags(id),
-    events_id bigint references events(id),
-    reward_id bigint references reward(id),
-  primary key (tag_id,reward_id, events_id)
-);
+    create table authorities (
+       user_id bigint not null,
+        role_id bigint not null,
+        primary key (user_id, role_id)
+    ) engine=InnoDB;
+
+    create table events (
+       id bigint not null,
+        description varchar(255) not null,
+        end_date datetime(6) not null,
+        location varchar(255) not null,
+        start_date datetime(6) not null,
+        status varchar(255),
+        title varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB;
+
+    create table events_attendance (
+       user_id bigint not null,
+        events_id bigint not null,
+        primary key (user_id, events_id)
+    ) engine=InnoDB;
+
+    create table eventsToReward (
+       reward_id bigint not null,
+        event_id bigint not null,
+        primary key (reward_id, event_id)
+    ) engine=InnoDB;
+
+    create table hibernate_sequence (
+       next_val bigint
+   ) engine=InnoDB;
+
+    create table organizations (
+       organization_id bigint not null,
+        name varchar(255) not null,
+        primary key (organization_id)
+    ) engine=InnoDB;
+
+    create table program (
+       program_id bigint not null,
+        decription varchar(255) not null,
+        fullName varchar(255) not null,
+        name varchar(255) not null,
+        primary key (program_id)
+    ) engine=InnoDB;
+
+    create table reward (
+       reward_id bigint not null,
+        description varchar(255) not null,
+        end_date datetime(6) not null,
+        provider varchar(255) not null,
+        reward_criteria integer,
+        start_date datetime(6) not null,
+        status varchar(255),
+        primary key (reward_id)
+    ) engine=InnoDB;
+
+    create table roles (
+       id bigint not null,
+        name varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB;
+
+    create table tags (
+       id bigint not null,
+        name varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB;
+
+    create table use_tags (
+       reward_id bigint null,
+        tag_id bigint not null,
+        events_id bigint null,
+        primary key (tag_id)
+    ) engine=InnoDB;
+
+    create table user_programs (
+       user_id bigint not null,
+        program_id bigint not null,
+        primary key (user_id, program_id)
+    ) engine=InnoDB;
+
+    create table users (
+       id bigint not null,
+        email varchar(255) not null,
+        enabled bit not null default true,
+        firstName varchar(255) not null,
+        lastName varchar(255) not null,
+        organization bigint not null,
+        password varchar(255) not null,
+        position varchar(255) not null,
+        title varchar(255),
+        username varchar(255) not null unique,
+        primary key (id)
+    ) engine=InnoDB;

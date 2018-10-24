@@ -9,36 +9,30 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "program")
-public class Program implements Serializable {
+@Table(name = "tags")
+public class Tags implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue
-    private Long program_id;
+    private Long id;
 
     @Column(nullable = false, unique = true)
     private String name;
-    
-    @Column(nullable = false, unique = true)
-    private String fullName;
-    
-    @Column(nullable = false)
-    private String decription;
 
-    public Program()
+    public Tags()
     {
     }
 
     public Long getId()
     {
-        return program_id;
+        return id;
     }
 
     public void setId( Long id )
     {
-        this.program_id = id;
+        this.id = id;
     }
 
     public String getName()
@@ -50,21 +44,5 @@ public class Program implements Serializable {
     {
         this.name = name;
     }
-
-	public String getFullName() {
-		return fullName;
-	}
-
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
-	}
-
-	public String getDecription() {
-		return decription;
-	}
-
-	public void setDecription(String decription) {
-		this.decription = decription;
-	}
 
 }

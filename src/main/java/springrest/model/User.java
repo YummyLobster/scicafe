@@ -4,8 +4,10 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -33,6 +35,7 @@ public class User implements Serializable {
     @Column(nullable = false)
     private String password;
 
+    @Column(nullable = false)
     private boolean enabled = true;
 
     @ManyToMany
@@ -51,7 +54,7 @@ public class User implements Serializable {
     private String lastName;
     
     @Column(nullable = false)
-    private String Postion;
+    private String position;
     
     @Column(nullable = false)
     private String email;
@@ -59,8 +62,19 @@ public class User implements Serializable {
     @Column(nullable = true)
     private String title;
     
-    @Column(nullable = true)
-    private String programAffiliations;
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH}, fetch=FetchType.LAZY)
+    @JoinTable(
+        name = "user_programs", 
+        joinColumns = { @JoinColumn(name = "user_id") }, 
+        inverseJoinColumns = { @JoinColumn(name = "program_id") }
+    )
+    Set<Program> programs;
+    
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH}, fetch=FetchType.LAZY)
+    @JoinTable(name = "attender_events",
+        joinColumns = @JoinColumn(name = "user_id"),
+        inverseJoinColumns = @JoinColumn(name = "event_id"))
+    Set<Event> eventAttended;  //user attend events
 
     public User()
     {
@@ -143,14 +157,6 @@ public class User implements Serializable {
 		this.lastName = lastName;
 	}
 
-	public String getPostion() {
-		return Postion;
-	}
-
-	public void setPostion(String postion) {
-		postion = postion;
-	}
-
 	public String getEmail() {
 		return email;
 	}
@@ -167,12 +173,30 @@ public class User implements Serializable {
 		this.title = title;
 	}
 
-	public String getProgramAffiliations() {
-		return programAffiliations;
+	public String getPosition() {
+		return position;
 	}
 
-	public void setProgramAffiliations(String programAffiliations) {
-		this.programAffiliations = programAffiliations;
+	public void setPosition(String position) {
+		this.position = position;
 	}
+
+	public Set<Program> getPrograms() {
+		return programs;
+	}
+
+	public void setPrograms(Set<Program> programs) {
+		this.programs = programs;
+	}
+
+	public Set<Event> getEventAttended() {
+		return eventAttended;
+	}
+
+	public void setEventAttended(Set<Event> eventAttended) {
+		this.eventAttended = eventAttended;
+	}
+
+	
 
 }

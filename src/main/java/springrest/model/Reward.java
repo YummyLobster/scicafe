@@ -5,12 +5,17 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -21,14 +26,10 @@ import com.fasterxml.jackson.annotation.JsonProperty.Access;
 @Table(name = "reward")
 public class Reward implements Serializable {
 
-    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue
-    private Long id;
-
-    @Column(nullable = false)
-    private String title;
+    private Long reward_id;
 
     @Column(nullable = false)
     private String description;
@@ -42,38 +43,40 @@ public class Reward implements Serializable {
     @Column(nullable = false)
     private Date end_date;
   
-    @Column(nullable = true)
-    private String status;
+    @Enumerated(EnumType.STRING)
+	private Status status;
     
-    @Column(nullable = true)
-    private String qualified_events;
     
-    @Column(nullable = true)
-    private String reward_criteria;
+    private Integer reward_criteria;
+    
+    @ManyToMany
+    @JoinTable(name = "use_tags",
+        joinColumns = @JoinColumn(name = "reward_id"),
+        inverseJoinColumns = @JoinColumn(name = "tag_id"))
+    Set<Tags> tags;
+    
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH}, fetch=FetchType.LAZY)
+    @JoinTable(name = "eventsToReward", joinColumns = { @JoinColumn(name = "reward_id") }, inverseJoinColumns = { @JoinColumn(name = "event_id") })
+    Set<Event> events;
+    
 
-    
-    public Reward()
+    public Reward() {
+    	
+    }
+    public Reward(Long reward_id, String description)
     {
+    	this.reward_id = reward_id;
+		this.description = description;
     }
 
 
 	public Long getId() {
-		return id;
+		return reward_id;
 	}
+	public enum Status{SUBMMITED,POSTED,REJECTED }
 
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-
-	public String getTitle() {
-		return title;
-	}
-
-
-	public void setTitle(String title) {
-		this.title = title;
+	public void setId(Long reward_id) {
+		this.reward_id = reward_id;
 	}
 
 
@@ -117,32 +120,13 @@ public class Reward implements Serializable {
 	}
 
 
-	public String getStatus() {
-		return status;
-	}
 
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-
-	public String getQualified_events() {
-		return qualified_events;
-	}
-
-
-	public void setQualified_events(String qualified_events) {
-		this.qualified_events = qualified_events;
-	}
-
-
-	public String getReward_criteria() {
+	public Integer getReward_criteria() {
 		return reward_criteria;
 	}
 
 
-	public void setReward_criteria(String reward_criteria) {
+	public void setReward_criteria(Integer reward_criteria) {
 		this.reward_criteria = reward_criteria;
 	}
 
