@@ -34,7 +34,7 @@ public class UserController {
     public User addUser( @RequestBody User user )
     {
         if( user.getUsername() == null || user.getPassword() == null || user.getEmail() == null || user.getFirstName() == null ||
-        		user.getLastName() == null || user.getPosition() == null || user.getOrganization() == null )
+        		user.getLastName() == null || user.getPosition() == null || user.getOrgOrMajor() == null )
             throw new RestException( 400, "Missing username and/or password or other message." );
 
         return userDao.saveUser( user );

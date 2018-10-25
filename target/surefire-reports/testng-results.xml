@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="7" passed="7">
+  <reporter-output>
+  </reporter-output>
+  <suite name="springrest.api.controller.ProgramControllerTest" duration-ms="3286" started-at="2018-10-25T09:48:33Z" finished-at="2018-10-25T09:48:37Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="3286" started-at="2018-10-25T09:48:33Z" finished-at="2018-10-25T09:48:37Z">
+      <class name="springrest.api.controller.ProgramControllerTest">
+        <test-method status="PASS" signature="springTestContextBeforeTestClass()[pri:0, instance:springrest.api.controller.ProgramControllerTest@5f16132a]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="8" started-at="2018-10-25T09:48:33Z" finished-at="2018-10-25T09:48:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+        <test-method status="PASS" signature="springTestContextPrepareTestInstance()[pri:0, instance:springrest.api.controller.ProgramControllerTest@5f16132a]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="2585" started-at="2018-10-25T09:48:33Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2018-10-25T09:48:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextPrepareTestInstance -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:springrest.api.controller.ProgramControllerTest@5f16132a]" name="setup" is-config="true" duration-ms="43" started-at="2018-10-25T09:48:36Z" finished-at="2018-10-25T09:48:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:springrest.api.controller.ProgramControllerTest@5f16132a]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="89" started-at="2018-10-25T09:48:36Z" finished-at="2018-10-25T09:48:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[void springrest.api.controller.ProgramControllerTest.addProgramFail() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="addProgramFail()[pri:0, instance:springrest.api.controller.ProgramControllerTest@5f16132a]" name="addProgramFail" duration-ms="131" started-at="2018-10-25T09:48:36Z" finished-at="2018-10-25T09:48:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addProgramFail -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:springrest.api.controller.ProgramControllerTest@5f16132a]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="25" started-at="2018-10-25T09:48:36Z" finished-at="2018-10-25T09:48:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[void springrest.api.controller.ProgramControllerTest.addProgramFail() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:springrest.api.controller.ProgramControllerTest@5f16132a]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="2" started-at="2018-10-25T09:48:36Z" finished-at="2018-10-25T09:48:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[void springrest.api.controller.ProgramControllerTest.addProgramPass() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="addProgramPass()[pri:0, instance:springrest.api.controller.ProgramControllerTest@5f16132a]" name="addProgramPass" duration-ms="111" started-at="2018-10-25T09:48:36Z" finished-at="2018-10-25T09:48:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addProgramPass -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:springrest.api.controller.ProgramControllerTest@5f16132a]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="27" started-at="2018-10-25T09:48:36Z" finished-at="2018-10-25T09:48:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[void springrest.api.controller.ProgramControllerTest.addProgramPass() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:springrest.api.controller.ProgramControllerTest@5f16132a]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="2" started-at="2018-10-25T09:48:36Z" finished-at="2018-10-25T09:48:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[void springrest.api.controller.ProgramControllerTest.editProgramFail() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="editProgramFail()[pri:0, instance:springrest.api.controller.ProgramControllerTest@5f16132a]" name="editProgramFail" duration-ms="7" started-at="2018-10-25T09:48:36Z" finished-at="2018-10-25T09:48:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editProgramFail -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:springrest.api.controller.ProgramControllerTest@5f16132a]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="2" started-at="2018-10-25T09:48:36Z" finished-at="2018-10-25T09:48:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[void springrest.api.controller.ProgramControllerTest.editProgramFail() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:springrest.api.controller.ProgramControllerTest@5f16132a]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="3" started-at="2018-10-25T09:48:36Z" finished-at="2018-10-25T09:48:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[void springrest.api.controller.ProgramControllerTest.editProgramPass() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="editProgramPass()[pri:0, instance:springrest.api.controller.ProgramControllerTest@5f16132a]" name="editProgramPass" duration-ms="16" started-at="2018-10-25T09:48:36Z" finished-at="2018-10-25T09:48:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editProgramPass -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:springrest.api.controller.ProgramControllerTest@5f16132a]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="8" started-at="2018-10-25T09:48:36Z" finished-at="2018-10-25T09:48:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[void springrest.api.controller.ProgramControllerTest.editProgramPass() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:springrest.api.controller.ProgramControllerTest@5f16132a]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="2" started-at="2018-10-25T09:48:36Z" finished-at="2018-10-25T09:48:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[void springrest.api.controller.ProgramControllerTest.getProgram() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="getProgram()[pri:0, instance:springrest.api.controller.ProgramControllerTest@5f16132a]" name="getProgram" duration-ms="53" started-at="2018-10-25T09:48:36Z" finished-at="2018-10-25T09:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getProgram -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:springrest.api.controller.ProgramControllerTest@5f16132a]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="2" started-at="2018-10-25T09:48:37Z" finished-at="2018-10-25T09:48:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[void springrest.api.controller.ProgramControllerTest.getProgram() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:springrest.api.controller.ProgramControllerTest@5f16132a]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="2" started-at="2018-10-25T09:48:37Z" finished-at="2018-10-25T09:48:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[void springrest.api.controller.ProgramControllerTest.getPrograms() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="getPrograms()[pri:0, instance:springrest.api.controller.ProgramControllerTest@5f16132a]" name="getPrograms" duration-ms="126" started-at="2018-10-25T09:48:37Z" finished-at="2018-10-25T09:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getPrograms -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:springrest.api.controller.ProgramControllerTest@5f16132a]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="1" started-at="2018-10-25T09:48:37Z" finished-at="2018-10-25T09:48:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[void springrest.api.controller.ProgramControllerTest.getPrograms() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:springrest.api.controller.ProgramControllerTest@5f16132a]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="2" started-at="2018-10-25T09:48:37Z" finished-at="2018-10-25T09:48:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[void springrest.api.controller.ProgramControllerTest.getPrograms2() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="getPrograms2()[pri:0, instance:springrest.api.controller.ProgramControllerTest@5f16132a]" name="getPrograms2" duration-ms="16" started-at="2018-10-25T09:48:37Z" finished-at="2018-10-25T09:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getPrograms2 -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:springrest.api.controller.ProgramControllerTest@5f16132a]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="3" started-at="2018-10-25T09:48:37Z" finished-at="2018-10-25T09:48:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[void springrest.api.controller.ProgramControllerTest.getPrograms2() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:springrest.api.controller.ProgramControllerTest@5f16132a]" name="springTestContextAfterTestClass" is-config="true" duration-ms="1" started-at="2018-10-25T09:48:37Z" finished-at="2018-10-25T09:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestClass -->
+      </class> <!-- springrest.api.controller.ProgramControllerTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- springrest.api.controller.ProgramControllerTest -->
+</testng-results>

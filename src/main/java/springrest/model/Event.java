@@ -7,6 +7,8 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -43,8 +45,8 @@ public class Event implements Serializable {
     @Column(nullable = false)
     private Date end_date;
   
-    @Column(nullable = true)
-    private String status;
+    @Enumerated(EnumType.STRING)
+	private Status status;
 
     
     @OneToMany
@@ -62,7 +64,6 @@ public class Event implements Serializable {
     
     public Event()
     {
-    	events_attendance = new HashSet<User>();
     	tags = new HashSet<Tags>();
     }
     public Event(Long id, String title, String description, String location, Date start_date, Date end_date) {
@@ -74,7 +75,7 @@ public class Event implements Serializable {
 		this.end_date = end_date;
 	}
 
-
+    public enum Status{SUBMITTED,POSTED,REJECTED }
 	public Long getId() {
 		return id;
 	}
@@ -135,15 +136,14 @@ public class Event implements Serializable {
 	}
 
 
-	public String getStatus() {
+	
+
+	public Status getStatus() {
 		return status;
 	}
-
-
-	public void setStatus(String status) {
+	public void setStatus(Status status) {
 		this.status = status;
 	}
-
 	public Set<User> getEvents_attendance() {
 		return events_attendance;
 	}

@@ -47,7 +47,7 @@ public class User implements Serializable {
     Set<Role> roles;
     
     @Column(nullable = false)
-    private String organization;
+    private String orgOrMajor;
     
     @Column(nullable = false)
     private String firstName;
@@ -190,12 +190,12 @@ public class User implements Serializable {
 		this.eventAttended = eventAttended;
 	}
 
-	public String getOrganization() {
-		return organization;
+	public String getOrgOrMajor() {
+		return orgOrMajor;
 	}
 
-	public void setOrganization(String organization) {
-		this.organization = organization;
+	public void setOrgOrMajor(String orgOrMajor) {
+		this.orgOrMajor = orgOrMajor;
 	}
 
 	

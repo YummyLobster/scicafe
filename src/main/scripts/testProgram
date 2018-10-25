@@ -1,0 +1,14 @@
+/events
+addEvent
+{
+    "title": "Welcome Week3",
+    "description": "Welcome all students come to CSULA.",
+    "location": "Main Walkway",
+    "start_date": 1534766400000,
+    "end_date": 1535371200000
+}
+/events/4/approval
+approveEvent
+{
+    "status":"POSTED"
+}

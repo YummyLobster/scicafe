@@ -16,7 +16,7 @@ create table attender_events (
         end_date datetime(6) not null,
         location varchar(255) not null,
         start_date datetime(6) not null,
-        status varchar(255),
+        status varchar(255) DEFAULT 'SUBMITTED',
         title varchar(255) not null,
         primary key (id)
     ) engine=InnoDB;
@@ -40,7 +40,7 @@ create table attender_events (
 
     create table program (
        program_id bigint not null,
-        decription varchar(255) not null,
+        description varchar(255) not null,
         fullName varchar(255) not null,
         name varchar(255) not null,
         primary key (program_id)
@@ -73,7 +73,7 @@ create table attender_events (
        reward_id bigint not null,
         tag_id bigint not null,
         events_id bigint not null,
-        primary key (events_id, tag_id)
+        primary key (tag_id)
     ) engine=InnoDB;
 
     create table user_programs (
@@ -88,7 +88,7 @@ create table attender_events (
         enabled bit not null default true,
         firstName varchar(255) not null,
         lastName varchar(255) not null,
-        organization varchar(255) not null,
+        orgOrMajor varchar(255) not null,
         password varchar(255) not null,
         position varchar(255) not null,
         title varchar(255),

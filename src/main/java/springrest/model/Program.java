@@ -25,11 +25,13 @@ public class Program implements Serializable {
     private String fullName;
     
     @Column(nullable = false)
-    private String decription;
+    private String description;
 
     public Program()
     {
     }
+
+ 
 
     public Long getId()
     {
@@ -41,7 +43,9 @@ public class Program implements Serializable {
         this.program_id = id;
     }
 
-    public String getName()
+
+
+	public String getName()
     {
         return name;
     }
@@ -59,12 +63,13 @@ public class Program implements Serializable {
 		this.fullName = fullName;
 	}
 
-	public String getDecription() {
-		return decription;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setDecription(String decription) {
-		this.decription = decription;
+	public void setDescription(String description) {
+		this.description = description;
 	}
+
 
 }
