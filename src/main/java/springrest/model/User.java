@@ -72,11 +72,11 @@ public class User implements Serializable {
     )
     Set<Program> programs;
     
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH}, fetch=FetchType.LAZY)
-    @JoinTable(name = "attender_events",
-        joinColumns = @JoinColumn(name = "user_id"),
-        inverseJoinColumns = @JoinColumn(name = "event_id"))
-    Set<Event> eventAttended;  //user attend events
+//    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH}, fetch=FetchType.LAZY)
+//    @JoinTable(name = "attender_events",
+//        joinColumns = @JoinColumn(name = "user_id"),
+//        inverseJoinColumns = @JoinColumn(name = "event_id"))
+//    Set<Event> eventAttended;  //user attend events
 
     public User()
     {
@@ -182,13 +182,13 @@ public class User implements Serializable {
 		this.programs = programs;
 	}
 
-	public Set<Event> getEventAttended() {
-		return eventAttended;
-	}
-
-	public void setEventAttended(Set<Event> eventAttended) {
-		this.eventAttended = eventAttended;
-	}
+//	public Set<Event> getEventAttended() {
+//		return eventAttended;
+//	}
+//
+//	public void setEventAttended(Set<Event> eventAttended) {
+//		this.eventAttended = eventAttended;
+//	}
 
 	public String getOrgOrMajor() {
 		return orgOrMajor;

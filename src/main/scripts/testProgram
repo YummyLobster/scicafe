@@ -1,5 +1,49 @@
+User registration
+/user
+POST
+{
+	"username":"lobsterS",
+	"password":"yummy",
+	"email":"123@gmail.com",
+	"firstName":"Daniel",
+	"lastName": "Chang",
+	"position": "Student",
+	"orgOrMajor":"computer science"
+}
+
+Get all programs
+/programs
+GET
+
+Get a program (by id)
+/programs/1
+GET
+
+Create a new program
+/programs
+POST
+{
+    "name": "CSULA CS Web",
+    "fullName": "CS5220 Web Programming",
+    "description": "Learn web design together."
+}
+
+Edit a program
+/programs/2/edit
+POST
+{
+    "name": "Web Design",
+    "fullName": "CS5220 Web Programming",
+    "description": "Learn web design together."
+}
+
+Delete a program
+/programs/2/delete
+DELETE
+
+Create a new event
 /events
-addEvent
+POST
 {
     "title": "Welcome Week3",
     "description": "Welcome all students come to CSULA.",
@@ -7,8 +51,21 @@ addEvent
     "start_date": 1534766400000,
     "end_date": 1535371200000
 }
+
+Approve/reject an event
 /events/4/approval
-approveEvent
+POST
 {
     "status":"POSTED"
 }
+
+Add an attendee to an event
+/events/2/attendee
+POST
+{
+	"id" : 7
+}
+
+Get all attendees of an event
+/events/1/attendee
+GET

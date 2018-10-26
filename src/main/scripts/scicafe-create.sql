@@ -1,9 +1,3 @@
-create table attender_events (
-       user_id bigint not null,
-        event_id bigint not null,
-        primary key (user_id, event_id)
-    ) engine=InnoDB;
-
     create table authorities (
        user_id bigint not null,
         role_id bigint not null,

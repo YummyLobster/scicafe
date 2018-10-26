@@ -56,4 +56,14 @@ public class ProgramController {
     	return programDao.saveProgram(programEdit);
 
     }
+ // delete a program
+ 	@RequestMapping(value = "/programs/{id}/delete", method = RequestMethod.DELETE)
+ 	public void deleteProgram(@PathVariable Long id) {
+ 		Program delete = programDao.getProgram(id);
+ 		if (delete == null)
+ 			throw new RestException(404, "No program can be deleted.");
+
+ 		programDao.deleteProgram(id);
+
+ 	}
 }

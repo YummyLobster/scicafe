@@ -12,5 +12,5 @@ public interface ProgramDao {
 
     Program saveProgram( Program program );
     
-   
+    void deleteProgram( Long id);
 }

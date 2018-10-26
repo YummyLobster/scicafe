@@ -33,3 +33,4 @@ insert into use_tags (tag_id, events_id, reward_id)value (2, 1, 1);
 
 insert into program (program_id,description, fullName,name) value (1,"share first year Experience to the Fresh man.","First-Year Experience Program at ECST","FYrE@ECST");
 insert into program (program_id,description, fullName,name) value (2,"Programmers, lets coding together!","Programmers at ECST","Ps@ECST");
+insert into program (program_id,description, fullName,name) value (3,"Programmers, lets coding together!","Programmers at CSULA","Ps@CSULA");

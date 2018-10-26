@@ -36,5 +36,13 @@ public class ProgramDaoImpl implements ProgramDao {
     {
         return entityManager.merge( program );
     }
+    
+    @Override
+    @Transactional
+    public void deleteProgram( Long id)
+    {
+    	Program program = entityManager.find(Program.class, id);
+    	entityManager.remove(program); 	
+    }
 
 }

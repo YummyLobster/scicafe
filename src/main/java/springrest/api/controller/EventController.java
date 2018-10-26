@@ -1,8 +1,10 @@
 package springrest.api.controller;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -54,24 +56,31 @@ public class EventController {
     	return eventDao.saveEvent(eventApprove);
 
     }
-//    @RequestMapping(value = "/events/{id}/attend", method = RequestMethod.POST)
-//    public Event addAttendee(@RequestBody Long user_id,
-//    								@PathVariable Long id){
-//
-//    	User events_attendance = userDao.getUser(user_id);
-//    	Event eventApprove = eventDao.getEvent(id); 
-//    	eventApprove.setEvents_attendance(events_attendance);
-//    	
-//    	return eventDao.saveEvent(eventApprove);
-//
-//    }
-    @RequestMapping(value = "/events/{id}/attend", method = RequestMethod.GET)
-    public Event getAttendee(@PathVariable Long id){
-
-    	Event eventApprove = eventDao.getEvent(id); 
-    	eventApprove.setEvents_attendance(events_attendance);
-    	
-    	return eventDao.saveEvent(eventApprove);
+    @RequestMapping(value = "/events/{id}/attendee", method = RequestMethod.POST)
+    public Event addAttendee(@RequestBody User users,
+    								@PathVariable Long id){
+    	User user = userDao.getUser(users.getId());
+    	Event event=eventDao.getEvent(id);
+		
+		if(event==null)
+			throw new RestException(400, "No such Event found");
+		if(user==null)
+			throw new RestException(400, "No such User found");
+		
+		event.getEvents_attendance().add(user);
+		
+		return eventDao.saveEvent(event);
 
     }
+    @RequestMapping(value = "/events/{id}/attendee", method = RequestMethod.GET)
+	public Set<User> getEventAttendee(@PathVariable Long id) {
+		
+		Event event=eventDao.getEvent(id);
+		
+		if(event==null)
+			throw new RestException(400, "No such Event found");
+		
+		return event.getEvents_attendance();
+
+	}
 }

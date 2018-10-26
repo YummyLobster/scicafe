@@ -49,7 +49,7 @@ public class Event implements Serializable {
 	private Status status;
 
     
-    @OneToMany
+    @ManyToMany
     @JoinTable(name = "events_attendance",
         joinColumns = @JoinColumn(name = "user_id"),
         inverseJoinColumns = @JoinColumn(name = "events_id"))

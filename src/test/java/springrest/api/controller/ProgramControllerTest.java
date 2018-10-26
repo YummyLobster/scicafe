@@ -1,6 +1,7 @@
 package springrest.api.controller;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import org.hamcrest.Matchers;
@@ -82,6 +83,7 @@ class ProgramControllerTest extends AbstractTransactionalTestNGSpringContextTest
 
 
     }
+    
     @Test
     @Rollback(false)
     void editProgramPass() throws Exception
@@ -90,5 +92,13 @@ class ProgramControllerTest extends AbstractTransactionalTestNGSpringContextTest
         .perform( post( "/programs/2/edit" ).contentType( "application/json" )
            .content( "{\"name\": \"cs5220\", \"fullName\": \"webProgramming\", \"description\":\"2018 Fall java spring web design\"}" ) )
         .andExpect( status().is2xxSuccessful() );
+    }
+    
+    @Test
+    @Rollback(false)
+    void deleteProgram() throws Exception
+    {
+    	this.mockMvc.perform( delete( "/programs/3/delete"))
+    	.andExpect( status().is2xxSuccessful() );
     }
 }

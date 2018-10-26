@@ -12,6 +12,6 @@ public interface EventDao {
 
     Event saveEvent( Event event );
     
-    List<User> getAttendee();
+    
 
 }
