@@ -12,6 +12,4 @@ public interface EventDao {
 
     Event saveEvent( Event event );
     
-    
-
 }

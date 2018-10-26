@@ -1,4 +1,3 @@
-drop table attender_events;
 drop table authorities;
 drop table events;
 drop table events_attendance;

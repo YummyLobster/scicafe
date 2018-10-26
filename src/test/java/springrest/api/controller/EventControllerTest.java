@@ -63,7 +63,7 @@ class EventControllerTest extends AbstractTransactionalTestNGSpringContextTests 
     void addEventFail() throws Exception
     {
     	this.mockMvc.perform( post( "/events" ).contentType( "application/json" )
-                .content( "{\"title\":\"Midterm Week\", \"location\": \"Library\", \"description\": \"Lets have some free pizza\", \"status\": \"SUBMITTED\"}" ) )
+                .content( "{\"title\":\"Midterm Week\", \"location\": \"Library\"}" ) )
              .andExpect( status().is4xxClientError() );
     }
     @Test
@@ -71,7 +71,8 @@ class EventControllerTest extends AbstractTransactionalTestNGSpringContextTests 
     void addEventPass() throws Exception
     {
     	this.mockMvc.perform( post( "/events" ).contentType( "application/json" )
-                .content( "{\"title\":\"Midterm Week\", \"location\": \"Library\", \"description\": \"Lets have some free pizza\", \"status\": \"SUBMITTED\"}" ) )
+                .content( "{\"title\":\"Midterm Week\", \"location\": \"Library\", \"description\": \"Lets have some free pizza\","
+                		+ " \"start_date\": \"1534766400000\", \"end_date\": \"1535371200000\"}" ) )
              .andExpect( status().is2xxSuccessful() );
     }
     
@@ -81,7 +82,7 @@ class EventControllerTest extends AbstractTransactionalTestNGSpringContextTests 
     	this.mockMvc
         .perform( post( "/events/1/approval" ).contentType( "application/json" )
             .content( "{\"status\": \"cs5220\"}" ) )
-        .andExpect( status().is4xxClientError());
+        .andExpect( status().is5xxServerError());
     }
     @Test
     @Rollback(false)
@@ -96,7 +97,7 @@ class EventControllerTest extends AbstractTransactionalTestNGSpringContextTests 
     void addEventAttendeeFail() throws Exception
     {
     	this.mockMvc
-        .perform( post( "/events/1/approval" ).contentType( "application/json" )
+        .perform( post( "/events/1/attendee" ).contentType( "application/json" )
             .content( "{\"id\": \"100\"}" ) )
         .andExpect( status().is4xxClientError());
     }

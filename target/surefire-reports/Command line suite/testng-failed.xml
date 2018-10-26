@@ -3,6 +3,17 @@
 <suite verbose="0" name="Failed suite [Command line suite]">
   <test thread-count="5" verbose="0" name="Command line test(failed)">
     <classes>
+      <class name="springrest.api.controller.ProgramControllerTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="deleteProgram"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="setup"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- springrest.api.controller.ProgramControllerTest -->
       <class name="springrest.api.controller.UserControllerTest">
         <methods>
           <include name="springTestContextBeforeTestClass"/>

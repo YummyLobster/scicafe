@@ -6,6 +6,7 @@
       <class name="springrest.api.controller.UserControllerTest">
         <methods>
           <include name="springTestContextBeforeTestClass"/>
+          <include name="addUserPass"/>
           <include name="getUsers"/>
           <include name="springTestContextPrepareTestInstance"/>
           <include name="springTestContextAfterTestClass"/>
